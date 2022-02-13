@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.mushycode</groupId>
+	<artifactId>sb-rmq-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>rabbitmq tests</name>
+	<description>Test rabbitmq queue features</description>
+
+	<modules>
+		<module>common</module>
+		<module>producer</module>
+		<module>consumer</module>
+	</modules>
+
+	<build>
+    <!-- Defines plugins that are used in the modules. -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.google.cloud.tools</groupId>
+					<artifactId>jib-maven-plugin</artifactId>
+					<version>3.2.0</version>
+					<configuration>
+						<from>
+							<image>openjdk:8-alpine</image>
+						</from>
+						<to>
+							<image>sb-rmq-demo</image>
+						</to>
+						<goalPrefix>jib</goalPrefix>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+  	</build>
+
+
+</project>
